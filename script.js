@@ -7,7 +7,6 @@ function change(){
     checkweather(cityname.value);
     document.querySelector(".city").innerHTML = cityname.value;
     cityname.value = "";
-    // document.querySelector(".extra").style.display="block";
 }
 
 async function checkweather(city){
@@ -16,7 +15,7 @@ async function checkweather(city){
     const response = await fetch(apiUrl + city + `&appid=${apikey}`);
     var data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     if(response.status == 404){
         document.querySelector(".error").style.display="block";
@@ -29,6 +28,7 @@ async function checkweather(city){
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + '°C';
     document.querySelector(".humidity").innerHTML = data.main.humidity + '&nbsp;%';
     document.querySelector(".wind-speed").innerHTML = data.wind.speed + '&nbsp;Km/h';
+    document.querySelector(".feel-like").innerHTML = data.main.feels_like;
 
 
     if(data.weather[0].main == "Clouds"){
@@ -62,5 +62,4 @@ async function checkweather(city){
     document.querySelector(".extra").style.display="block";
     document.querySelector(".error").style.display="none";
     }
-
 }

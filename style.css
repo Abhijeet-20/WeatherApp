@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@300&family=Poppins:wght@300;400&family=Roboto&display=swap');
 body{
     background-color: #101820FF;
 }
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .weatherapp{
     width: 90%;
     max-width: 470px;
     background: linear-gradient(135deg, #00feba,#5b548a);
-    margin: 30px auto 20px;
+    margin: 25px auto 20px;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
+}
+@media (max-width:600px) {
+    .weatherapp{
+        width: 100%;
+    }
 }
 .input-search{
     width: 100%;
